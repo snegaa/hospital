@@ -6,8 +6,5 @@ from django.http import HttpResponse
 def hell(request):
     print(request.POST)
     print(request.GET)
-    name = 'Masha'
-    aaa = 5
-    x = 10
 
-    return HttpResponse(render(request, 'main.html',  locals()))
+    return HttpResponse(render(request, 'main.html',  {'flag':True}))
