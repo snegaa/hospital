@@ -10,7 +10,7 @@
     .login
     {
         position: absolute;
-        top: 10px;
+        top: 15px;
         right: 10px;
     }
     .arr
@@ -22,20 +22,29 @@
     }
     #pr
     {
+    color: blue;
+    text-align:center;
     position: absolute;
-    top: 150px;
+    top: 165px;
+    width: 40%;
+    }
+    #prr
+    {
+     left: 30px;
+     position: absolute;
+      top: 200px;
     }
 </style>
 {% if flag %}
 <form class = "login" action="." method="POST">
-    <label >Логин:</label><input  name='login' type="password"/>
+    <label >Вам нужно авторизоваться: Логин:</label><input  name='login' type="password"/>
     <label >Пароль:</label><input name='pass' type="password"/>
     <input value="Зайти" type="submit"/>
 </form>
 {% endif %}
 <p>
     <h1 class = "arr">
-                    Мы рады видеть Вас на портале по самозаписи приема к врачу!
+                    Мы рады видеть Вас на портале по самозаписи на прием к врачу!
                 <p>
                     Это удобно и быстро!
                 </p>
@@ -46,6 +55,7 @@
 <p Id = "pr">
     Наш Прайс-Лист:
 </p> </h3>
+<h2 id="prr">
 <table border="1">
     <tr>
         <td>***</td>
@@ -57,6 +67,7 @@
 
     </tr>
 </table>
+    </h2>
 
 
 </body>
