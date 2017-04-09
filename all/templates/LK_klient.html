@@ -1,0 +1,75 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+<img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
+<style type="text/css">
+#images
+    {
+        width: 100%;
+        height: 100%;
+    }
+.login
+    {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+#main
+    {
+        position: absolute;
+        left: 100px;
+        top: 3px;
+    }
+.center_text
+    {
+        text-align: center;
+        position: absolute;
+        top: 20px;
+        width: 100%;
+    }
+
+#table
+    {
+        position: absolute;
+        text-align: center;
+        width: 700px;
+        border: 3px solid darkblue;
+        margin-top: -400;
+        left: 300;
+        font-size: 30pt;
+    }
+
+#left_button
+    {
+        position: absolute;
+
+    }
+
+</style>
+
+<form class = "login" action="." method="POST">
+    <label> <b> <font size="5"  > Вы вошли: *** *** </font> </b></label>
+    <input value="Выход" type="submit"/>
+</form>
+
+<b><font size="5"> <p id="main">На Главную</p></font> </b>
+
+<p>
+    <h1 class = "center_text">
+        Вы вошли в личный кабинет
+                <p>
+                    Здесь вы сможете записаться на прием к врачу!
+                </p>
+
+    </h1>
+</p>
+
+
+</body>
+</html>

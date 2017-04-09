@@ -9,4 +9,8 @@ def hell(request):
     print(request.GET)
     all_vrach = Vrach.objects.all()
 
-    return HttpResponse(render(request, 'main.html',  {'flag':True, 'all_vrach': all_vrach}))
+    return HttpResponse(render(request, 'main.html',  {'flag': True, 'all_vrach': all_vrach}))
+
+
+def LK_klient(request):
+    return HttpResponse(render(request, 'LK_klient.html', ))
