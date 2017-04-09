@@ -1,12 +1,18 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Самозапись к врачу</title>
     <link rel = "stylesheet" href="style.css">
 </head>
-<body>
+<body class="bod">
+<img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
 <style type="text/css">
+    #images
+    {
+    width: 100%;
+    height: 100%;
+    }
     .login
     {
         position: absolute;
@@ -37,14 +43,14 @@
 </style>
 {% if flag %}
 <form class = "login" action="." method="POST">
-    <label >Вам нужно авторизоваться: Логин:</label><input  name='login' type="password"/>
+    <label >Вам нужно авторизоваться: Логин:</label><input  name='login' type="text"/>
     <label >Пароль:</label><input name='pass' type="password"/>
     <input value="Зайти" type="submit"/>
 </form>
 {% endif %}
 <p>
     <h1 class = "arr">
-                    Мы рады видеть Вас на портале по самозаписи на прием к врачу!
+        Мы рады видеть Вас на портале по самозаписи на прием к врачу!
                 <p>
                     Это удобно и быстро!
                 </p>
@@ -61,14 +67,16 @@
         <td>***</td>
         <td>ФИО врача</td>
         <td>Первичный прием</td>
-        <td>Вторичный прием</td>
+        <td>Повторный прием</td>
     </tr>
     <tr>
 
     </tr>
 </table>
     </h2>
-
+{% for x in all_vrach %}
+    {{ x.FK_People.familia }}<br>
+{% endfor %}
 
 </body>
 </html>
