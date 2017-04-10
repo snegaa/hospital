@@ -5,3 +5,5 @@ all/models.py
 all/migrations/__init__.py
 all/migrations/__init__.py
 all/migrations/__init__.py
+avtoriz/migrations/0002_auto_20170410_2108.py
+avtoriz/migrations/__init__.py

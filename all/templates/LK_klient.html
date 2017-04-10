@@ -53,8 +53,8 @@
 
 </style>
 
-<form class = "login" action="." method="POST">
-    <label> <b> <font size="5"  > Вы вошли: *** *** </font> </b></label>
+<form class = "login" action="/logout/" method="POST">
+    <label> <b> <font size="5"  > Вы вошли: {{ user.first_name }} {{ user.last_name }} </font> </b></label>
     <input value="Выход" type="submit"/>
 </form>
 

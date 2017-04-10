@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^c/', include('polls.urls')),
     url(r'^$', views.hell),
     url(r'^lk/', views.LK_klient),
+    url(r'^logout/', views.logout),
 
 
 ]

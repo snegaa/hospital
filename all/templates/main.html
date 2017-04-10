@@ -75,10 +75,15 @@
         top: 200px;
     }
 </style>
-{% if flag %}
+
+{% if is_loged %}
+    <form class = "login" action="/logout/" method="POST">
+        <label> <b> <font size="5"  > Вы вошли: {{ user.first_name }} {{ user.last_name }} </font> </b></label>
+        <input value="Выйти" type="submit"/>
+    </form>
+{% else %}
 <form class = "login" action="." method="POST">
-    <label >Вам нужно авторизоваться: Логин:</label><input  name='login' type="text"/>
-    <label >Пароль:</label><input name='pass' type="password"/>
+    {{ form }}
     <input value="Зайти" type="submit"/>
 </form>
 {% endif %}
