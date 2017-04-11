@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Личный кабинет</title>
+    <title>Личный кабинет пациента</title>
     <link rel = "stylesheet" href="style.css">
 </head>
 <body>
@@ -26,50 +26,104 @@
         left: 100px;
         top: 3px;
     }
-.center_text
+#center_text
     {
         text-align: center;
         position: absolute;
-        top: 20px;
+        top: 50px;
         width: 100%;
     }
 
-#table
+#left_text
     {
+        text-align: left;
         position: absolute;
+        top: 150px;
+        width: 100%;
+        left: 50px;
+        color: darkblue;
+    }
+#budte_zdorovy
+    {
         text-align: center;
-        width: 700px;
-        border: 3px solid darkblue;
-        margin-top: -400;
-        left: 300;
-        font-size: 30pt;
-    }
-
-#left_button
-    {
         position: absolute;
-
+        top: 700px;
+        width : 100%;
     }
+
+.design
+    {
+        display: inline-block; /* Строчно-блочный элемент */
+        padding: 5px 20px; /* Добавляем поля */
+        text-decoration: none; /* Убираем подчёркивание у ссылки */
+        cursor: pointer; /* Курсор в виде руки */
+        background: #deefff; /* Фон для браузеров, не поддерживающих градиент */
+        /* Градиент */
+        background: -moz-linear-gradient(top, #deefff 0%, #98bede 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#deefff), color-stop(100%,#98bede));
+        background: -webkit-linear-gradient(top, #deefff 0%,#98bede 100%);
+        background: -o-linear-gradient(top, #deefff 0%,#98bede 100%);
+        background: -ms-linear-gradient(top, #deefff 0%,#98bede 100%);
+        background: linear-gradient(top, #deefff 0%,#98bede 100%);
+        border-radius: 10px; /* Скругляем уголки */
+        border: 1px solid #008; /* Добавляем синюю рамку */
+        font: 12px/1 Arial, sans-serif; /* Рубленый шрифт */
+        color: #2c539e; /* Цвет текста и ссылки */
+    }
+.btn
+    {		//Задание общего стиля для кнопки
+	    height:30px;
+	    border-color:#c2e254 #9bb838 #9bb838 #c2e254;
+	    border-style:solid;
+    	border-width:1px;
+    	background:#c2e254;
+	    cursor:pointer;
+	}
+.btn:hover
+    {	//Стиль кнопки при новедении на него курсора
+	    border-color:#FFCC66 #FFFF99 #FFFF99 #FFCC66;
+	    border-style:solid;
+	    border-width:1px;
+	    background:#FFFF99;
+	}
+.btn:focus
+    {	//Стиль кнопки, когда она в фокусе
+    	background:#ddd;
+    	border-color:#ddd #333 #333 #ddd;
+    	border-style:solid;
+	    border-width:1px;
+	}
+.btn:active
+    {		//Стиль кнопки при нажатии
+	    background:#ff0000;
+	    border-color:#ddd #333 #333 #ddd;
+    	border-style:solid;
+	    border-width:1px;
+	}
+
 
 </style>
 
 <form class = "login" action="/logout/" method="POST">
-    <label> <b> <font size="5"  > Вы вошли: {{ user.first_name }} {{ user.last_name }} </font> </b></label>
+    <label> <b> <font size="5"  > Вы вошли как: {{ user.first_name }} {{ user.last_name }} </font> </b></label>
     <input value="Выход" type="submit"/>
 </form>
 
-<b><font size="5"> <p id="main">На Главную</p></font> </b>
-
 <p>
-    <h1 class = "center_text">
-        Вы вошли в личный кабинет
-                <p>
-                    Здесь вы сможете записаться на прием к врачу!
-                </p>
-
-    </h1>
+    <h1 id="center_text"> Добро пожаловать в личный кабинет!  </h1>
 </p>
+<p> <h1 id="left_text"> Здесь вы сможете записаться на прием к врачу </h1> </p>
 
+<p><a href="zapis.html" class="design">Ссылка</a> </p>
+
+<form>
+<input type="button" value="knopka" class="design" onclick="/zapis.html/">
+      <button class="design">Кнопка</button>
+    </form>
+
+
+
+<h3 id="budte_zdorovy"><b>Будьте здоровы!</b></h3>
 
 </body>
 </html>

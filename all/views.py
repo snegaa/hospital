@@ -38,3 +38,7 @@ def LK_klient(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+
+def zapis(request):
+    return HttpResponse(render(request, 'zapis.html'))

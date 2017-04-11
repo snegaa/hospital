@@ -21,10 +21,10 @@ from all import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^c/', include('polls.urls')),
     url(r'^$', views.hell),
     url(r'^lk/', views.LK_klient),
     url(r'^logout/', views.logout),
+    url(r'^zapis/', views.zapis),
 
 
 ]
