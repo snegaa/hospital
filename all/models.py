@@ -48,15 +48,15 @@ class History(models.Model):
 
 
 class Smena(models.Model):
-    start = models.TimeField()
-    end = models.TimeField()
+    start_time = models.TimeField()
+    end_time = models.TimeField()
     time = models.IntegerField()
 
 
 class Zapis(models.Model):
     kabinet = models.IntegerField()
-    p = models.ForeignKey(Bolnoy)
-    v = models.ForeignKey(Vrach)
+    FK_People = models.ForeignKey(Bolnoy)
+    FK_Vrach = models.ForeignKey(Vrach)
     talon = models.ForeignKey(Smena)
 
 

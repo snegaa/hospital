@@ -6,13 +6,27 @@
     <link rel = "stylesheet" href="style.css">
 </head>
 <body>
-<img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
+
 <style type="text/css">
+
+#main_page
+    {
+        position: absolute;
+        top: 50px;
+        color: darkblue;
+        font-size: 25;
+
+    }
+
 #images
     {
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 1370px;
+        height: 620px;
     }
+
 .login
     {
         position: absolute;
@@ -47,80 +61,48 @@
     {
         text-align: center;
         position: absolute;
-        top: 700px;
+        top: 580px;
         width : 100%;
+        left: -50px;
     }
-
-.design
+    .button_container
     {
-        display: inline-block; /* Строчно-блочный элемент */
-        padding: 5px 20px; /* Добавляем поля */
-        text-decoration: none; /* Убираем подчёркивание у ссылки */
-        cursor: pointer; /* Курсор в виде руки */
-        background: #deefff; /* Фон для браузеров, не поддерживающих градиент */
-        /* Градиент */
-        background: -moz-linear-gradient(top, #deefff 0%, #98bede 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#deefff), color-stop(100%,#98bede));
-        background: -webkit-linear-gradient(top, #deefff 0%,#98bede 100%);
-        background: -o-linear-gradient(top, #deefff 0%,#98bede 100%);
-        background: -ms-linear-gradient(top, #deefff 0%,#98bede 100%);
-        background: linear-gradient(top, #deefff 0%,#98bede 100%);
-        border-radius: 10px; /* Скругляем уголки */
-        border: 1px solid #008; /* Добавляем синюю рамку */
-        font: 12px/1 Arial, sans-serif; /* Рубленый шрифт */
-        color: #2c539e; /* Цвет текста и ссылки */
+        position: absolute;
+        width: 100%;
+        /*height:100%;*/
+        top: 0px;
+        left: 0px;
+        margin-top: 220px;
+        text-align: center;
+        vertical-align: middle;
+        border: 4px;
     }
-.btn
-    {		//Задание общего стиля для кнопки
-	    height:30px;
-	    border-color:#c2e254 #9bb838 #9bb838 #c2e254;
-	    border-style:solid;
-    	border-width:1px;
-    	background:#c2e254;
-	    cursor:pointer;
-	}
-.btn:hover
-    {	//Стиль кнопки при новедении на него курсора
-	    border-color:#FFCC66 #FFFF99 #FFFF99 #FFCC66;
-	    border-style:solid;
-	    border-width:1px;
-	    background:#FFFF99;
-	}
-.btn:focus
-    {	//Стиль кнопки, когда она в фокусе
-    	background:#ddd;
-    	border-color:#ddd #333 #333 #ddd;
-    	border-style:solid;
-	    border-width:1px;
-	}
-.btn:active
-    {		//Стиль кнопки при нажатии
-	    background:#ff0000;
-	    border-color:#ddd #333 #333 #ddd;
-    	border-style:solid;
-	    border-width:1px;
-	}
 
+    .button_container input
+    {
+        font-size: 20pt;
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
+    }
 
 </style>
-
+<img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
 <form class = "login" action="/logout/" method="POST">
     <label> <b> <font size="5"  > Вы вошли как: {{ user.first_name }} {{ user.last_name }} </font> </b></label>
     <input value="Выход" type="submit"/>
 </form>
 
+<a href="/main.html" id="main_page"> На главную  </a>
 <p>
     <h1 id="center_text"> Добро пожаловать в личный кабинет!  </h1>
 </p>
 <p> <h1 id="left_text"> Здесь вы сможете записаться на прием к врачу </h1> </p>
-
-<p><a href="zapis.html" class="design">Ссылка</a> </p>
-
-<form>
-<input type="button" value="knopka" class="design" onclick="/zapis.html/">
-      <button class="design">Кнопка</button>
-    </form>
-
+<div class="button_container">
+<form> <p> <input type="button" class="button1" value="ЗАПИСАТЬСЯ"> </p> </form>
+<form> <p> <input type="button" class="button2" value="ВЫЗОВЫ НА ДОМ"> </p> </form>
+<form> <p> <input type="button"  class="button3" value="ПРЕДЫДУЩИЕ ПОСЕЩЕНИЯ"> </p> </form>
+<form> <p> <input type="button"  class="button4" value="ПРЕДСТОЯЩИЕ ПОСЕЩЕНИЯ"> </p> </form>
+<form> <p> <input type="button"  class="button5" value="ПOЛЕЗНАЯ ИНФОРМАЦИЯ"> </p> </form>
+</div>
 
 
 <h3 id="budte_zdorovy"><b>Будьте здоровы!</b></h3>

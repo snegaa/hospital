@@ -6,14 +6,14 @@
     <link rel = "stylesheet" href="style.css">
 </head>
 <body>
-<img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
+
 <style type="text/css">
 
 #budte_zdorovy
     {
         text-align: center;
         position: absolute;
-        top: 700px;
+        top: 580px;
         width : 100%;
     }
 
@@ -21,7 +21,7 @@
     {
         right: 100px;
         position: absolute;
-        top: 250px;
+        top: 210px;
     }
 
 #inf_work
@@ -43,8 +43,11 @@
 
 #images
     {
-        width: 100%;
-        height: 100%;
+       position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 1370px;
+        height: 620px;
     }
 
 .login
@@ -75,6 +78,8 @@
         top: 200px;
     }
 </style>
+
+<img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
 
 {% if is_loged %}
     <form class = "login" action="/logout/" method="POST">
