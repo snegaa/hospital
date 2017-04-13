@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^lk/', views.LK_klient),
     url(r'^logout/', views.logout),
     url(r'^zapis/', views.zapis),
+    url(r'^vyzovy_na_dom', views.vyzovyNaDom)
+
 
 
 ]

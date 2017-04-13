@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Запись пациента</title>
+    <title>Вызовы на дом</title>
     <link rel = "stylesheet" href="style.css">
 </head>
 <body>
@@ -24,15 +24,22 @@
         top: 50px;
         width: 100%;
     }
+#left_text
+    {
+        text-align: left;
+        position: absolute;
+        top: 150px;
+        width: 100%;
+        left: 50px;
+        color: darkblue;
+    }
 
 </style>
-
 <img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
-<form class = "login" action="/logout/" method="POST">
-    <label> <b> <font size="5"  > Вы вошли как: {{ user.first_name }} {{ user.last_name }} </font> </b></label>
-    <input value="Выход" type="submit"/>
-</form>
 
-<h1 id="center_text"> Здесь Вы можете записаться на прием  </h1>
+<p> <h1 id="center_text"> Здесь Вы можете просмотреть всю информацию о вызовах врача на дом:  </h1> </p>
+
+<p><h3 id="left_text">У Вас нет вызовов на дом.</h3></p>
+
 </body>
 </html>

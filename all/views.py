@@ -42,3 +42,7 @@ def logout(request):
 
 def zapis(request):
     return HttpResponse(render(request, 'zapis.html'))
+
+
+def vyzovyNaDom(request):
+        return HttpResponse(render(request, 'vyzovy_na_dom.html'))
