@@ -25,9 +25,9 @@ urlpatterns = [
     url(r'^lk/', views.LK_klient),
     url(r'^logout/', views.logout),
     url(r'^zapis/', views.zapis),
-    url(r'^vyzovy_na_dom', views.vyzovyNaDom)
-
-
+    url(r'^vyzovy_na_dom/', views.vyzovyNaDom),
+    url(r'^future_visits/', views.future_visits),
+    url(r'^past_visits/', views.past_visits),
 
 ]
 

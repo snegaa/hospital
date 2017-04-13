@@ -46,3 +46,11 @@ def zapis(request):
 
 def vyzovyNaDom(request):
         return HttpResponse(render(request, 'vyzovy_na_dom.html'))
+
+
+def future_visits(request):
+    return HttpResponse(render(request, 'future_visits.html'))
+
+
+def past_visits(request):
+    return HttpResponse(render(request, 'past_visits.html'))

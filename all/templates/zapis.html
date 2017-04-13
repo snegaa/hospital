@@ -24,15 +24,20 @@
         top: 50px;
         width: 100%;
     }
-
+#left_text
+    {
+        text-align: left;
+        position: absolute;
+        top: 150px;
+        width: 100%;
+        left: 30px;
+        color: darkblue;
+    }
 </style>
 
 <img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
-<form class = "login" action="/logout/" method="POST">
-    <label> <b> <font size="5"  > Вы вошли как: {{ user.first_name }} {{ user.last_name }} </font> </b></label>
-    <input value="Выход" type="submit"/>
-</form>
 
-<h1 id="center_text"> Здесь Вы можете записаться на прием  </h1>
+<h1 id="center_text"> Здесь Вы можете записаться на прием!  </h1>
+<p><h2 id="left_text">Для этого Вам необходимо выбрать врача и забронировать время.</h2></p>
 </body>
 </html>
