@@ -58,7 +58,12 @@ def past_visits(request):
 
 
 def helpful_information(request):
-    return HttpResponse(render(request, 'helpful_information.html'))
+    if request.user is None or isinstance(request.user, AnonymousUser):
+        return redirect('/')
+    return HttpResponse(render(request, 'helpful_information.html', {
+        'is_loged': True,
+        'user': request.user
+    }))
 
 
 def LK_Vrach(request):
