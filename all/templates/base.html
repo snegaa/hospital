@@ -1,0 +1,156 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title> {% block title %} page {% endblock %} </title>
+        <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+
+<style type="text/css">
+#center_text
+    {
+        text-align: center;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+    }
+
+#left_text
+    {
+        text-align: center;
+        position: absolute;
+        top: 130px;
+        width: 100%;
+        color: darkblue;
+    }
+
+    .button_container
+    {
+        position: absolute;
+        width: 100%;
+        /*height:100%;*/
+        top: 0px;
+        left: 0px;
+        margin-top: 220px;
+        text-align: center;
+        vertical-align: middle;
+        border: 4px;
+    }
+
+.button_container input
+    {
+        font-size: 20pt;
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
+    }
+.text_information
+    {
+        right: 100px;
+        position: absolute;
+        top: 210px;
+    }
+
+#inf_work
+    {
+        color: darkblue;
+        text-align : right;
+        position: absolute;
+        top: 165px;
+        width: 75%;
+    }
+
+.text_in_table
+    {
+        text-align: center;
+        background: #F0F8FF;
+        font-weight: 600;
+
+    }
+#main
+    {
+        position: absolute;
+        left: 100px;
+        top: 3px;
+    }
+#images
+    {
+       position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 1370px;
+        height: 620px;
+    }
+
+.login
+    {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+.center_text
+    {
+        text-align: center;
+        position: absolute;
+        top: 20px;
+        width: 100%;
+    }
+#price_list
+    {
+        color: darkblue;
+        text-align:center;
+        position: absolute;
+        top: 165px;
+        width: 40%;
+    }
+#table
+    {
+        left: 30px;
+        position: absolute;
+        top: 200px;
+    }
+#budte_zdorovy
+    {
+        position: absolute;
+        width: 100%;
+        /*height:100%;*/
+        top: 0px;
+        left: 0px;
+        margin-top: 600px;
+        text-align: center;
+        vertical-align: middle;
+    }
+{% block style %}
+{% endblock %}
+#main_page
+    {
+        position: absolute;
+        top: 50px;
+        color: darkblue;
+        font-size: 25;
+    }
+
+
+</style>
+
+<img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
+
+{% if is_loged %}
+    <form class = "login" action="/logout/" method="POST">
+        <label> <b> <font size="5"> Вы вошли: {{ user.first_name }} {{ user.last_name }} </font> </b></label>
+        <input value="Выйти" type="submit"/>
+    </form>
+{% else %}
+<form class = "login" action="." method="POST">
+    {{ form }}
+    <input value="Зайти" type="submit"/>
+</form>
+{% endif %}
+
+{% block menu %}
+{% endblock %}
+
+<h3 id="budte_zdorovy"><b>Будьте здоровы!</b></h3>
+
+</body>
+</html>

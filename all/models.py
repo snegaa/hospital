@@ -4,11 +4,11 @@ from django.db import models
 
 
 class People(models.Model):
-    number_pasport = models.IntegerField(verbose_name = 'Номер паспорта')
+    number_pasport = models.IntegerField(verbose_name='Номер паспорта')
     seria_pasport = models.IntegerField(verbose_name='Серия паспорта')
-    familia = models.TextField(max_length = 20, verbose_name='Фамилия')
-    imya = models.TextField(max_length = 20, verbose_name='Имя')
-    otchestvo = models.TextField(max_length = 20, verbose_name = 'Отчество')
+    familia = models.TextField(max_length=20, verbose_name='Фамилия')
+    imya = models.TextField(max_length=20, verbose_name='Имя')
+    otchestvo = models.TextField(max_length=20, verbose_name = 'Отчество')
     parol = models.IntegerField(verbose_name='Пароль')
 
     class Meta:

@@ -1,100 +1,8 @@
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Личный кабинет пациента</title>
-    <link rel = "stylesheet" href="style.css">
-</head>
-<body>
+{% extends "base.html" %}
 
-<style type="text/css">
+    {% block title %} Личный кабинет пациента {% endblock %}
 
-#main_page
-    {
-        position: absolute;
-        top: 50px;
-        color: darkblue;
-        font-size: 25;
-
-    }
-
-#images
-    {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 1370px;
-        height: 620px;
-    }
-
-.login
-    {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-    }
-
-#main
-    {
-        position: absolute;
-        left: 100px;
-        top: 3px;
-    }
-#center_text
-    {
-        text-align: center;
-        position: absolute;
-        top: 50px;
-        width: 100%;
-    }
-
-#left_text
-    {
-        text-align: center;
-        position: absolute;
-        top: 130px;
-        width: 100%;
-        color: darkblue;
-    }
-#budte_zdorovy
-    {
-        position: absolute;
-        width: 100%;
-        /*height:100%;*/
-        top: 0px;
-        left: 0px;
-        margin-top: 600px;
-        text-align: center;
-        vertical-align: middle;
-
-    }
-    .button_container
-    {
-        position: absolute;
-        width: 100%;
-        /*height:100%;*/
-        top: 0px;
-        left: 0px;
-        margin-top: 220px;
-        text-align: center;
-        vertical-align: middle;
-        border: 4px;
-    }
-
-    .button_container input
-    {
-        font-size: 20pt;
-        background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
-    }
-
-</style>
-<img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
-<form class = "login" action="/logout/" method="POST">
-    <label> <b> <font size="5"  > Вы вошли как: {{ user.first_name }} {{ user.last_name }} </font> </b></label>
-    <input value="Выход" type="submit"/>
-</form>
-
-
+{% block menu %}
 <p><h1 id="center_text"> Добро пожаловать в личный кабинет!  </h1></p>
 <p> <h1 id="left_text"> Здесь вы сможете записаться на прием к врачу </h1> </p>
 <div class="button_container">
@@ -102,11 +10,7 @@
     <center> <p> <a href="/vyzovy_na_dom" > <input type="button" value="ВЫЗОВЫ НА ДОМ"></a> </p></center>
     <center> <p> <a href="/past_visits" > <input type="button" value=" ПРЕДЫДУЩИЕ ПОСЕЩЕНИЯ"></a> </p></center>
     <center> <p><a href="/future_visits" > <input type="button" value="ПРЕДСТОЯЩИЕ ПОСЕЩЕНИЯ"></a> </p></center>
-    <center> <p> <a href="/" ><input type="button" value="ПОЛЕЗНАЯ ИНФОРМАЦИЯ"> </a> </p></center>
+    <center> <p> <a href="/helpful_information" ><input type="button" value="ПОЛЕЗНАЯ ИНФОРМАЦИЯ"> </a> </p></center>
     <center> <p> <a href="/" ><input type="button" value="НА ГЛАВНУЮ"> </a> </p></center>
 </div>
-
-<center>
-<h3 id="budte_zdorovy"><b>Будьте здоровы!</b></h3> </center>
-</body>
-</html>
+{% endblock %}

@@ -12,9 +12,7 @@ def hell(request):
     all_vrach = Vrach.objects.all()
     is_loged = True
     form = AuthForm()
-    print(request.user)
     if request.user is None or isinstance(request.user, AnonymousUser):
-        print(123)
         is_loged = False
         if request.method.upper() == 'POST':
             form = AuthForm(request.POST)
@@ -32,7 +30,10 @@ def hell(request):
 def LK_klient(request):
     if request.user is None or isinstance(request.user, AnonymousUser):
         return redirect('/')
-    return HttpResponse(render(request, 'LK_klient.html', ))
+    return HttpResponse(render(request, 'LK_klient.html', {
+        'is_loged': True,
+        'user': request.user
+    }))
 
 
 def logout(request):
@@ -54,3 +55,12 @@ def future_visits(request):
 
 def past_visits(request):
     return HttpResponse(render(request, 'past_visits.html'))
+
+
+def helpful_information(request):
+    return HttpResponse(render(request, 'helpful_information.html'))
+
+
+def LK_Vrach(request):
+    return HttpResponse(render(request, 'lk_Vrach.html'))
+
