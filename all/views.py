@@ -42,19 +42,59 @@ def logout(request):
 
 
 def zapis(request):
-    return HttpResponse(render(request, 'zapis.html'))
+    if request.user is None or isinstance(request.user, AnonymousUser):
+        return redirect('/')
+    return HttpResponse(render(request, 'zapis.html' , {
+        'is_loged': True,
+        'user': request.user
+    }))
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 
 
 def vyzovyNaDom(request):
-        return HttpResponse(render(request, 'vyzovy_na_dom.html'))
+    if request.user is None or isinstance(request.user, AnonymousUser):
+        return redirect('/')
+    return HttpResponse(render(request, 'vyzovy_na_dom.html', {
+        'is_loged': True,
+        'user': request.user
+    }))
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 
 
 def future_visits(request):
-    return HttpResponse(render(request, 'future_visits.html'))
+    if request.user is None or isinstance(request.user, AnonymousUser):
+        return redirect('/')
+    return HttpResponse(render(request, 'future_visits.html', {
+        'is_loged': True,
+        'user': request.user
+    }))
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 
 
 def past_visits(request):
-    return HttpResponse(render(request, 'past_visits.html'))
+    if request.user is None or isinstance(request.user, AnonymousUser):
+        return redirect('/')
+    return HttpResponse(render(request, 'past_visits.html', {
+        'is_loged': True,
+        'user': request.user
+    }))
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 
 
 def helpful_information(request):
@@ -67,5 +107,15 @@ def helpful_information(request):
 
 
 def LK_Vrach(request):
-    return HttpResponse(render(request, 'lk_Vrach.html'))
+    if request.user is None or isinstance(request.user, AnonymousUser):
+        return redirect('/')
+    return HttpResponse(render(request, 'lk_Vrach.html', {
+        'is_loged': True,
+        'user': request.user
+    }))
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 
