@@ -10,6 +10,28 @@
 <p Id = "price_list">
     Ознакомтесь с Прайс-Листом:
 </p> </h3>
+
+{% block style %}
+.button_container
+    {
+        position: absolute;
+        width: 100%;
+        /*height:100%;*/
+        top: 340px;
+        left: 50px;
+        margin-top: 220px;
+        text-align: left;
+        border: 4px;
+    }
+
+    .button_container input
+    {
+        font-size: 20pt;
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
+    }
+{% endblock %}
+
+
 <h2 id="table">
         <table border="2" class="text_in_table">
             <b>
@@ -19,10 +41,10 @@
                 <td>Первичный прием</td>
                 <td>Повторный прием</td>
              </tr>
-            {% for x in all_vrach %}
+            {% for x in doctors %}
             <tr>
                 <td>
-                    {{ x.FK_position.position }}<br>
+                   {{ x.FK_position.position }}<br>
                 </td>
                 <td>
                     {{ x.FK_People.familia }}<br>
@@ -63,5 +85,6 @@
     </tr>
 
 </table>
-
+<div class="button_container">
+    <p> <a href="/lk" ><input type="button" value="НАЗАД"></a> </p> </div>
 {% endblock %}

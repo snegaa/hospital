@@ -9,7 +9,7 @@ from django.contrib import auth
 
 
 def hell(request):
-    all_vrach = Vrach.objects.all()
+    doctors = Vrach.objects.all()
     is_loged = True
     form = AuthForm()
     if request.user is None or isinstance(request.user, AnonymousUser):
@@ -20,7 +20,7 @@ def hell(request):
                 return redirect('/lk/')
 
     return HttpResponse(render(request, 'main.html',  {
-        'all_vrach': all_vrach,
+        'doctors': doctors,
         'form': form,
         'is_loged': is_loged,
         'user': request.user
@@ -41,10 +41,26 @@ def logout(request):
     return redirect('/')
 
 
-def zapis(request):
+def select_doctor(request):
     if request.user is None or isinstance(request.user, AnonymousUser):
         return redirect('/')
-    return HttpResponse(render(request, 'zapis.html' , {
+    doctors = Vrach.objects.all()
+    return HttpResponse(render(request, 'select_doctor.html', {
+        'is_loged': True,
+        'user': request.user,
+        'doctors': doctors,
+    }))
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
+
+def select_time(request, id):
+    if request.user is None or isinstance(request.user, AnonymousUser):
+        return redirect('/')
+    return HttpResponse(render(request, 'select_time.html', {
         'is_loged': True,
         'user': request.user
     }))
@@ -98,9 +114,11 @@ def logout(request):
 
 
 def helpful_information(request):
+    doctors = Vrach.objects.all()
     if request.user is None or isinstance(request.user, AnonymousUser):
         return redirect('/')
     return HttpResponse(render(request, 'helpful_information.html', {
+        'doctors': doctors,
         'is_loged': True,
         'user': request.user
     }))

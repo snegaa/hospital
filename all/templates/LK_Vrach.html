@@ -1,13 +1,6 @@
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Личный кабинет врача</title>
-    <link rel = "stylesheet" href="style.css">
-</head>
-<body>
-
-<style type="text/css">
+{% extends "base.html" %}
+{% block title %} Личный кабинет врача {% endblock %}
+   {% block style %}
 
 #main_page
     {
@@ -141,15 +134,8 @@
     vertical-align: middle;
 
    }
-
-</style>
-<img id="images" src="{% static 'images/background.jpg' %}" alt=" ">
-<form class = "login" action="/logout/" method="POST">
-    <label> <b> <font size="5"  > Вы вошли как: {{ user.first_name }} {{ user.last_name }} </font> </b></label>
-    <input value="Выход" type="submit"/>
-</form>
-
-
+{% endblock %}
+{% block menu %}
 <p><h1 id="center_text"> Добро пожаловать в личный кабинет врача!  </h1></p>
 <p> <h2 id="left_text"> Помните, ваша работа несет людям добро! </h2> </p>
 
@@ -207,9 +193,5 @@
         </tr>
 
     </table>
-
-
 </h2>
-<h3 id="budte_zdorovy"><b>Будьте здоровы!</b></h3> </center>
-</body>
-</html>
+{% endblock %}

@@ -25,16 +25,6 @@ class Dolzhnost(models.Model):
         return self.position
 
 
-class Vrach(models.Model):
-    FK_People = models.ForeignKey(People)
-    FK_position = models.ForeignKey(Dolzhnost)
-    price_ferst = models.IntegerField(default=0, verbose_name='Цена первичного приема')
-    price_second = models.IntegerField(default=0, verbose_name='Цена повторного приема')
-
-    def __str__(self):
-        return '{0}, {1}'.format(str(self.FK_People), str(self.FK_position))
-
-
 class Bolnoy(models.Model):
     FK_People = models.ForeignKey(People)
     e_mail = models.EmailField()
@@ -48,16 +38,47 @@ class History(models.Model):
 
 
 class Smena(models.Model):
+    MONDAY = 'monday'
+    TUESDAY = 'tuesday'
+    WEDNESDAY = 'wednesday'
+    THURSDAY = 'thursday'
+    FRIDAY = 'friday'
+    SATURDAY = 'saturday'
+    SUNDAY = 'sunday'
+    CHOICE_DAYS = (
+        (MONDAY, MONDAY),
+        (TUESDAY, TUESDAY),
+        (WEDNESDAY, WEDNESDAY),
+        (THURSDAY, THURSDAY),
+        (FRIDAY, FRIDAY),
+        (SATURDAY, SATURDAY),
+        (SUNDAY, SUNDAY),
+    )
     start_time = models.TimeField()
     end_time = models.TimeField()
-    time = models.IntegerField()
+    day = models.CharField(max_length=10, choices=CHOICE_DAYS, default=MONDAY)
+
+    def __str__(self):
+        return self.day
+
+
+class Vrach(models.Model):
+    FK_People = models.ForeignKey(People)
+    FK_position = models.ForeignKey(Dolzhnost)
+    price_ferst = models.IntegerField(default=0, verbose_name='Цена первичного приема')
+    price_second = models.IntegerField(default=0, verbose_name='Цена повторного приема')
+    smena = models.ManyToManyField(Smena)
+    interval_of_work = models.IntegerField(default=30)
+
+    def __str__(self):
+        return '{0}, {1}'.format(str(self.FK_People), str(self.FK_position))
 
 
 class Zapis(models.Model):
-    kabinet = models.IntegerField()
-    FK_People = models.ForeignKey(Bolnoy)
-    FK_Vrach = models.ForeignKey(Vrach)
-    talon = models.ForeignKey(Smena)
+    kabinet = models.IntegerField(null=False)
+    people_fk = models.ForeignKey(Bolnoy, null=False)
+    doctor_fk = models.ForeignKey(Vrach, null=False)
+    order = models.IntegerField(null=False)
 
 
 

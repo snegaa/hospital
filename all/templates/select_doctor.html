@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %} Личный кабинет врача {% endblock %}
+
+{% block menu %}
+<p><h1 id="center_text"> 1. Для начала необходимо выбрать врача.   </h1></p>
+<p> <h1 id="left_text"> ФИО врача можно выбрать в представленном списке:</h1> </p>
+<div class="button_container1"> <p><a href="/" ><input type="button" value="НА ГЛАВНУЮ"> </a> </p> </div>
+
+<h2 id="table2">
+        <table border="2" class="text_in_table">
+            <b>
+            <tr>
+                <td>***</td>
+                <td>ФИО врача</td>
+                <td>Первичный прием</td>
+                <td>Повторный прием</td>
+             </tr>
+           {% for x in doctors %}
+            <tr>
+                <td>
+                   {{ x.FK_position.position }}<br>
+                </td>
+                <td>
+                    <a href="/select_time" {{ id }} >
+                    {{ x.FK_People.familia }}<br>
+                    {{ x.FK_People.imya }}<br>
+                    {{ x.FK_People.otchestvo }}<br> </a>
+                </td>
+                <td>
+                    {{ x.price_ferst }}<br>
+                </td>
+                <td>
+                    {{ x.price_second }}<br>
+                </td>
+            {% endfor %}
+            </tr>
+            </b>
+        </table>
+</h2>
+
+{% endblock %}

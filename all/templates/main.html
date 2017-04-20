@@ -33,10 +33,10 @@
                 <td>Первичный прием</td>
                 <td>Повторный прием</td>
              </tr>
-            {% for x in all_vrach %}
+            {% for x in doctors %}
             <tr>
                 <td>
-                    {{ x.FK_position.position }}<br>
+                   {{ x.FK_position.position }}<br>
                 </td>
                 <td>
                     {{ x.FK_People.familia }}<br>

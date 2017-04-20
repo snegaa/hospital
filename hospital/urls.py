@@ -24,12 +24,13 @@ urlpatterns = [
     url(r'^$', views.hell),
     url(r'^lk/', views.LK_klient),
     url(r'^logout/', views.logout),
-    url(r'^zapis/', views.zapis),
+    url(r'^select_time/(?P<id>[0-9]+)/', views.select_time),
     url(r'^vyzovy_na_dom/', views.vyzovyNaDom),
     url(r'^future_visits/', views.future_visits),
     url(r'^past_visits/', views.past_visits),
-    url(r'^helpful_information', views.helpful_information),
-    url(r'^lk_vrach', views.LK_Vrach),
+    url(r'^helpful_information/', views.helpful_information),
+    url(r'^lk_vrach/', views.LK_Vrach),
+    url(r'^select_doctor/', views.select_doctor),
 
 
 
