@@ -31,6 +31,8 @@ urlpatterns = [
     url(r'^helpful_information/', views.helpful_information),
     url(r'^lk_vrach/', views.LK_Vrach),
     url(r'^select_doctor/', views.select_doctor),
+    url(r'^a/', views.a),
+
 
 
 

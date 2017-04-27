@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %} Подтверждение{% endblock %}
+
+{% block menu %}
+{% block style %}
+
+.button
+    {
+        position: absolute;
+        width: 100%;
+        /*height:100%;*/
+        top: 0px;
+        left: 0px;
+        margin-top: 220px;
+        text-align: center;
+        vertical-align: middle;
+        border: 4px;
+    }
+
+.button input
+    {
+        font-size: 20pt;
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
+    }
+
+{% endblock %}
+<h1 id="left_text"> Проверьте правильность введеных данных!  </h1>
+<p><h2 id="text">Ваш лечащий врач:  <a href="/mary"> Хирург стоматолог -  Мария Иванова </a> </h2> </p>
+<p><h3 id = "sv_time">Выбранное время: 11:00</h3></p>
+
+<div class="button">
+    <center> <p> <a href="/" > <input type="button" value="Да, все правильно!"></a> </p></center>
+    <center> <p><a href="/" > <input type="button" value="Нет, вернуться назад"></a> </p></center>
+</div>
+
+{% endblock %}

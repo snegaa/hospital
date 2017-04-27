@@ -58,9 +58,11 @@ def logout(request):
 
 
 def select_time(request, id):
+    doctors = Vrach.objects.all()
     if request.user is None or isinstance(request.user, AnonymousUser):
         return redirect('/')
     return HttpResponse(render(request, 'select_time.html', {
+        'doctors': doctors,
         'is_loged': True,
         'user': request.user
     }))
@@ -133,7 +135,15 @@ def LK_Vrach(request):
     }))
 
 
+def a(request):
+    if request.user is None or isinstance(request.user, AnonymousUser):
+        return redirect('/')
+    return HttpResponse(render(request, 'a.html', {
+        'is_loged': True,
+        'user': request.user
+    }))
+
+
 def logout(request):
     auth.logout(request)
     return redirect('/')
-

@@ -1,7 +1,53 @@
 {% extends "base.html" %}
-{% blocl title %} Запись пациента{% endblock %}
+{% block title %} Запись пациента{% endblock %}
 
 {% block menu %}
-<h1 id="center_text"> Здесь Вы можете записаться на прием!  </h1>
-<p><h2 id="left_text">Теперь необходимо выбрать свободное время у врача.</h2></p>
+{% block style %}
+
+#text
+    {
+        position: absolute;
+        top: 200px;
+        width: 100%;
+        color: black;
+    }
+
+#sv_time
+{
+        position: absolute;
+        top: 300px;
+        width: 100%;
+        color: black;
+}
+.button_container1
+    {
+        position: absolute;
+        width: 100%;
+        /*height:100%;*/
+        top: 0px;
+        left: -130px;
+        margin-top: 220px;
+        border: 4px;
+    }
+
+.button_container1 input
+    {
+        font-size: 20pt;
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(#808080), to(#808080));
+    }
+{% endblock %}
+<h1 id="left_text"> Теперь необходимо выбрать свободное время у врача.  </h1>
+<p><h2 id="text">Вы выбрали врача: <a href="/mary"> Мария Иванова </a> </h2> </p>
+<p><h3 id = "sv_time">Свободное время:</h3></p>
+
+<div class="button_container">
+
+    <center> <p><a href="/a" ><input type="button" value="11:00"></a> </p></center>
+    <center> <p><a href="/a" ><input type="button" value="12:05"></a> </p></center>
+</div>
+<div class="button_container1">
+<center> <p> <a><input type="button" value="9:00"></a> </p> </center>
+    <center> <p> <a> <input type="button" value="10:30"></a> </p></center>
+</div>
+
 {% endblock %}
